@@ -46,7 +46,7 @@ Output > bmt
   - Yerel değişkenler ( Local Variables ) : Method içinde tanımlanan ve kullanılan değişkenlerlir. Method dışında kullanılamazlar. Küçük harf ile ya da '_' ile başlar.
   - Örnek değişkenler ( Instance Variables ) : Methodlar arasında kullanılabilen değişkenlerdir. Yani objeden objeye değişkenlik gösterir. İsimlendirmesi '@' ile başlar.
   - Class değişkenleri ( Class Variables ) : Farklı objeler arasında kullanılabilen değişklenlerdir. Yani class ait bir değişkendir. İsimlendirmesi '@@' ile başlar.
-  - Global Variables : Classlar arası kullanılabilen değişklenlerdir. İsimlendirmesi '@@@' ile başlar.
+  - Global Variables : Classlar arası kullanılabilen değişklenlerdir. İsimlendirmesi '$' ile başlar.
   
 Örnek
 ```
