@@ -12,9 +12,9 @@ Ruby öğrenmeye yardımcı kaynaklar
   - Polymorphism
   - Abstraction
   - Data Hiding
-  - Önceden tanımlanan tüm veri tipleri bir objedir
   - Kullanıcının tanımladığı tüm veri tipleri bir objedir
-    (Yani int, double, float gibi ilkel veri tipleri içermiyor. Örnek olarak java saf nesne yönemli programla dili değildir.
+  - Önceden tanımlanan tüm veri tipleri bir objedir
+  (Yani int, double, float gibi ilkel veri tipleri içermiyor. Örnek olarak java saf nesne yönemli programla dili değildir.
    
   Kaynak(https://www.c-sharpcorner.com/blogs/full-object-oriented-language-vs-pure-object-oriented-language1)
 
@@ -40,10 +40,26 @@ my=Class1.new
 my.method1
 ```
 Output > bmt
-- Ruby dilinde değişkenler 
+- Eğer objeni parametreli olarak yaratıcaksan classının içinde "initialize" methodunu kullanmalısın. (Constructor) 
+- ######Ruby dilinde değişkenler 
   rubyde 4 çeşit değişken vardır bunlar
   - Yerel değişkenler ( Local Variables ) : Method içinde tanımlanan ve kullanılan değişkenlerlir. Method dışında kullanılamazlar. Küçük harf ile ya da '_' ile başlar.
   - Örnek değişkenler ( Instance Variables ) : Methodlar arasında kullanılabilen değişkenlerdir. Yani objeden objeye değişkenlik gösterir. İsimlendirmesi '@' ile başlar.
   - Class değişkenleri ( Class Variables ) : Farklı objeler arasında kullanılabilen değişklenlerdir. Yani class ait bir değişkendir. İsimlendirmesi '@@' ile başlar.
   - Global Variables : Classlar arası kullanılabilen değişklenlerdir. İsimlendirmesi '@@@' ile başlar.
   
+<br />
+Örnek:
+```
+class Ogrenci
+    @@ogrenci_sayisi=0
+    def initialize(no,ad)
+        @no=no
+        @ad=ad
+    end
+end
+
+ogrenci1 = Ogrenci.new("181180063","Ali")
+ogrenci2 = Ogrenci.new("181180064","Mehmet")
+```
+bu durumda initialize methodunun parametre olarak aldığı no ve değişkenleri local değişkenler oluyor ve initialize dışında kullanılamıyorlar.bu methodun içinde local değişkler @ad,@no Instance değişkenlerine atanıyor. Ayrıca @@@ogrenci_sayisi değişkeni Class değişkeni olup Ogrenci classında yaratılan tüm objelerde kullanılabilir.
