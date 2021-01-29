@@ -66,10 +66,10 @@ Bu durumda initialize methodunun parametre olarak aldığı no ve ad değişkenl
 
 > Rubyde değişkenlere ulaşmak için '#' kullanıyoruz.
 
-##### Ruby sabitler
+### Ruby sabitler
 Sabitler(Constants) büyük harf ile başlar. Tanımlandığı class ya da modül içinde erişilebilir. Eğer herhangi bir class veya modül içinde tanımlanmamışsa global olarak erişilebilir. Method içinde sabit tanımlanamaz.
 
-##### Ruby değişkenimsiler(Pseudo-Variables)
+### Ruby değişkenimsiler(Pseudo-Variables)
 - self 
 
 kaynak (https://www.rubyguides.com/2020/04/self-in-ruby/)
