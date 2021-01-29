@@ -48,8 +48,7 @@ Output > bmt
   - Class değişkenleri ( Class Variables ) : Farklı objeler arasında kullanılabilen değişklenlerdir. Yani class ait bir değişkendir. İsimlendirmesi '@@' ile başlar.
   - Global Variables : Classlar arası kullanılabilen değişklenlerdir. İsimlendirmesi '@@@' ile başlar.
   
-<br />
-Örnek:
+Örnek
 ```
 class Ogrenci
     @@ogrenci_sayisi=0
