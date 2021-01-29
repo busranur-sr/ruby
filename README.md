@@ -61,4 +61,4 @@ end
 ogrenci1 = Ogrenci.new("181180063","Ali")
 ogrenci2 = Ogrenci.new("181180064","Mehmet")
 ```
-bu durumda initialize methodunun parametre olarak aldığı no ve değişkenleri local değişkenler oluyor ve initialize dışında kullanılamıyorlar.bu methodun içinde local değişkler @ad,@no Instance değişkenlerine atanıyor. Ayrıca @@@ogrenci_sayisi değişkeni Class değişkeni olup Ogrenci classında yaratılan tüm objelerde kullanılabilir.
+Bu durumda initialize methodunun parametre olarak aldığı no ve ad değişkenleri local değişkenler oluyor ve initialize methodu dışında kullanılamıyorlar. Bu methodun içinde local değişkeler ; @ad,@no Instance değişkenlerine atanıyor. Ayrıca @@@ogrenci_sayisi değişkeni Class değişkeni olup Ogrenci classından yaratılan tüm objelerde kullanılabilir.
