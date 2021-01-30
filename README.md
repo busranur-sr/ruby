@@ -96,12 +96,12 @@ ogrenci2.total_ogrenci()
 
 ```
 Output
-> Öğrenci no: 181180063
-  Öğrenci ad: Ali
-  Öğrenci no: 181180064
-  Öğrenci ad: Mehmet
-  Toplam öğrenci sayısı: 2
-  Toplam öğrenci sayısı: 2
+> Öğrenci no: 181180063 <\br>
+  Öğrenci ad: Ali <\br>
+  Öğrenci no: 181180064 <\br>
+  Öğrenci ad: Mehmet <\br>
+  Toplam öğrenci sayısı: 2 <\br>
+  Toplam öğrenci sayısı: 2 <\br>
 
 ### Ruby sabitler
 Sabitler(Constants) büyük harf ile başlar. Tanımlandığı class ya da modül içinde erişilebilir. Eğer herhangi bir class veya modül içinde tanımlanmamışsa global olarak erişilebilir. Method içinde sabit tanımlanamaz.
