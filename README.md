@@ -42,7 +42,7 @@ my.method1
 ```
 Output > bmt
 - Eğer objeni parametreli olarak yaratıcaksan classının içinde "initialize" methodunu kullanmalısın. (Constructor) 
-- ######Ruby dilinde değişkenler
+- #### Ruby dilinde değişkenler
   - Yerel değişkenler ( Local Variables ) : Method içinde tanımlanan ve kullanılan değişkenlerlir. Method dışında kullanılamazlar. Küçük harf ile ya da '_' ile başlar.
   - Anlık değişkenler ( Instance Variables ) : Yalnızca üretilen nesne içinde geçerlidir. Methodlar arasında kullanılabilen değişkenlerdir. Yani objeden objeye değişkenlik gösterir. İsimlendirmesi '@' ile başlar.
   - Sınıf değişkenleri ( Class Variables ) : Sınıf değişkenleri, değişkenin tanımlandığı sınıfta ve onun bütün altsınıflarında (oğul) ve modüllerinde geçerlidir. Yani class'a ait bir değişkendir. İsimlendirmesi '@@' ile başlar.
@@ -65,6 +65,43 @@ ogrenci2 = Ogrenci.new("181180064","Mehmet")
 Bu durumda initialize methodunun parametre olarak aldığı no ve ad değişkenleri local değişkenler oluyor ve initialize methodu dışında kullanılamıyorlar. Bu methodun içinde local değişkeler ; @ad,@no Instance değişkenlerine atanıyor. Ayrıca @@@ogrenci_sayisi değişkeni Class değişkeni olup Ogrenci classından yaratılan tüm objelerde kullanılabilir.
 
 > Rubyde değişkenlere ulaşmak için '#' kullanıyoruz.
+Örnek 
+```
+class Ogrenci
+    @@ogrenci_sayisi=0
+    def initialize(no,ad)
+        @no=no
+        @ad=ad
+        @@ogrenci_sayisi+=1
+    end
+
+    def display()
+        print "Öğrenci no: #@no\n"
+        print "Öğrenci ad: #@ad\n" 
+    end
+   
+    def total_ogrenci()
+        print "Toplam öğrenci sayısı: #@@ogrenci_sayisi\n"
+    end
+end
+
+
+ogrenci1 = Ogrenci.new("181180063","Ali")
+ogrenci2 = Ogrenci.new("181180064","Mehmet")
+
+ogrenci1.display()
+ogrenci2.display()
+ogrenci1.total_ogrenci()
+ogrenci2.total_ogrenci()
+
+```
+Output
+> Öğrenci no: 181180063
+  Öğrenci ad: Ali
+  Öğrenci no: 181180064
+  Öğrenci ad: Mehmet
+  Toplam öğrenci sayısı: 2
+  Toplam öğrenci sayısı: 2
 
 ### Ruby sabitler
 Sabitler(Constants) büyük harf ile başlar. Tanımlandığı class ya da modül içinde erişilebilir. Eğer herhangi bir class veya modül içinde tanımlanmamışsa global olarak erişilebilir. Method içinde sabit tanımlanamaz.
