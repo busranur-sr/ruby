@@ -1,4 +1,4 @@
-# ruby
+# Ruby
 
 Ruby öğrenmeye yardımcı kaynaklar
 - https://www.tutorialspoint.com/ruby/ruby_overview.htm
@@ -106,9 +106,36 @@ Output
 ### Ruby sabitler
 Sabitler(Constants) büyük harf ile başlar. Tanımlandığı class ya da modül içinde erişilebilir. Eğer herhangi bir class veya modül içinde tanımlanmamışsa global olarak erişilebilir. Method içinde sabit tanımlanamaz.
 
-### Ruby değişkenimsiler(Pseudo-Variables)
-- self 
+### Ruby get set kullanımı
 
-kaynak (https://www.rubyguides.com/2020/04/self-in-ruby/)
-#### Ruby 
+```
+class Ogrenci
+    
+    @name
+    def setName(name)
+        @name=name
+    end
+
+    def getName
+        @name
+    end
+
+end
+
+ogrenci=Ogrenci.new
+ogrenci.setName("xxx")
+printf("öğrenci ismi : %s",ogrenci.getName)
+```
+### Ruby Paralel Atama
+ Çoklu atamlar mümkün.
+ ```
+ x,y,z=1,2,3
+ ```
+ x y x değerlerine sırasıyla 1 2 3 değerlerini atıyor. Eğer karşısına 3 değerden az yazsaydık boşta kalanlar nil olucaktı.Örneğin x,y,z=1,2 için x=1,y=2 ve z=nil.
+ 
+ aynı zamanda değer takas etmek için ayrı bir değişkene ihtiyacımız yok.
+ ```
+ x,y=y,x
+ ```
+ x ve ynin değerlerini takas ettirdik.
 
