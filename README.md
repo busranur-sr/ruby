@@ -126,12 +126,14 @@ ogrenci=Ogrenci.new
 ogrenci.setName("xxx")
 printf("öğrenci ismi : %s",ogrenci.getName)
 ```
+Output > öğrenci ismi : xxx
+
 ### Ruby Paralel Atama
- Çoklu atamlar mümkün.
+ Çoklu atamalar mümkün.
  ```
  x,y,z=1,2,3
  ```
- x y x değerlerine sırasıyla 1 2 3 değerlerini atıyor. Eğer karşısına 3 değerden az yazsaydık boşta kalanlar nil olucaktı.Örneğin x,y,z=1,2 için x=1,y=2 ve z=nil.
+ x y x değerlerine sırasıyla 1 2 3 değerlerini atıyor. Eğer karşısına 3 değerden az yazsaydık boşta kalanlar nil olacaktı.Örneğin x,y,z=1,2 için x=1,y=2 ve z=nil.
  
  aynı zamanda değer takas etmek için ayrı bir değişkene ihtiyacımız yok.
  ```
