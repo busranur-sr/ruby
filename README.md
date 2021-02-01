@@ -250,13 +250,13 @@ end
 
 ### Döngüler
 
-#### While döngüsü
+- #### While döngüsü
 
 while koşul [do] <br>
   ---yapılacaklar--- <br>
  end <br>
  
-"do" ifadesi yerine "\" , ";" kullanabilir yada yeni satıra geçebiliriz.
+"do" ifadesi yerine "\" , ";" kullanabilir ya da yeni satıra geçebiliriz.
 
 Örnek
 ```
@@ -271,12 +271,14 @@ end
  - while döngüsünü daha farklı şekilde de kullanabiliriz
  
  > code while koşul
+ <br>
  ya da
+ <br>
  > begin <br>
  >  -yapılacaklar- <br>
  >  end while koşul
 
-yukarıdaki durumda en başta koşul değerlendirilmeden bir kere çalışır daha sonra koşul değerlendirilip devam eder.
+- Yukarıdaki durumda en başta koşul değerlendirilmeden bir kere çalışır daha sonra koşul değerlendirilip devam eder.
 
 
 
