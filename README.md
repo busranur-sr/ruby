@@ -266,8 +266,8 @@ while x<y
     print x
     x+=1
 end
-
 ```
+Output: > 1234
  - while döngüsünü daha farklı şekilde de kullanabiliriz
  
  > code while koşul
@@ -280,6 +280,20 @@ end
 
 - Yukarıdaki durumda en başta koşul değerlendirilmeden bir kere çalışır daha sonra koşul değerlendirilip devam eder.
 
+Örnek:
+```
+x=1
+y=5
+begin 
+    print x
+    x+=1
+end while x>y
+```
+Output: > 1
+ 
+- *until ifadesi while ile aynı mantığa sahiptir. Tek fark *koşulu sağlamadığında* çalışır.
+
+- **for kullanımı**
 
 
 
