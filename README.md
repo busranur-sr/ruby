@@ -194,7 +194,19 @@ Output: > Compiler error.
 
 ### Case kullanımı
 
-- "===" kapsama operatorü ile kullanılır.
+"case" "when" "end" ifadeleri ile kullanılır. When li koşullardan hiçbirini sağlamazsa else'e girer.
+```
+ifade="bmt"
+case ifade
+when "bmt"
+    puts "x"
+when "gazi"
+    puts "xx"
+else
+    puts "xxx"
+end
+```
+- "===" kapsama operatorü ile de kullanılır.
 Kapsama operatorü boolean olarak geri dönüş verir.
 
 ```
@@ -206,13 +218,12 @@ Kapsama operatorü boolean olarak geri dönüş verir.
 ```
 
 case expression
-[when expression [, expression ...] [then]
-   code ]...
-[else
-   code ]
+[when expression [, expression ...] [then] <br>
+   code ]... <br>
+[else<br>
+   code ] <br>
 end
 
-When li koşullardan hiçbirini sağlamazsa else'e girer.
 Örnek:
 ```
 değer=5
@@ -236,6 +247,36 @@ else
     puts "7den büyük"
 end
 ```
+
+### Döngüler
+
+#### While döngüsü
+
+while koşul [do] <br>
+  ---yapılacaklar--- <br>
+ end <br>
+ 
+"do" ifadesi yerine "\" , ";" kullanabilir yada yeni satıra geçebiliriz.
+
+Örnek
+```
+x=1
+y=5
+while x<y 
+    print x
+    x+=1
+end
+
+```
+ - while döngüsünü daha farklı şekilde de kullanabiliriz
+ 
+ > code while koşul
+ ya da
+ > begin <br>
+ >  -yapılacaklar- <br>
+ >  end while koşul
+
+yukarıdaki durumda en başta koşul değerlendirilmeden bir kere çalışır daha sonra koşul değerlendirilip devam eder.
 
 
 
