@@ -151,7 +151,14 @@ Output > öğrenci ismi : xxx
  x ve ynin değerlerini takas ettirdik.
  
  ### if - else kullanımı 
- 
+
+- İf ifadesi ile yapılması istenen şeyler yeni bir satır, noktalı virgül ya da "then" ifadelesi ile ayrılır.
+ ```
+ condition=true 
+ if true then print "xxx"
+ end
+ ```
+ İf - else kullanımı. 
 ```
 condition=5
 if condition
@@ -163,17 +170,18 @@ else
 end
 ```
 Output: > Koşul false ya da nil ise false, diğer tüm durumlar true
-Aynı zamanda tek satırda da kullanabiliriz.
+<br>
+Aynı zamanda tek satırda da kullanabiliriz. *end kullanılmıyor bu durumda*
  > kod if koşul 
 ```
 condition=5
-print "xxx" if condition
+print "xxx" if condition 
 ```
 output: > xxx
 
-- Unless kullanımı yukarıdakinin aynısı ancak rubyde unless ile birlikte elsif kullanılamıyor.Yani aşağıdaki hatalı
+- Unless kullanımı yukarıdakinin aynısı ancak rubyde unless ile birlikte elsif kullanılamıyor.Yani aşağıdaki hatalı. Ayrıca unless kullanımı önerilmiyor.
 ```
-nless true
+unless true
   puts "one"
 elsif true
   puts "two"
@@ -183,3 +191,55 @@ end
 
 ```
 Output: > Compiler error.
+
+### Case kullanımı
+
+- "===" kapsama operatorü ile kullanılır.
+Kapsama operatorü boolean olarak geri dönüş verir.
+
+```
+ (1..5) === 3             # => true
+ (1..5) === 6             # => false
+
+  Integer === 42          # => true
+  Integer === 'bmt' # => false
+```
+
+case expression
+[when expression [, expression ...] [then]
+   code ]...
+[else
+   code ]
+end
+
+When li koşullardan hiçbirini sağlamazsa else'e girer.
+Örnek:
+```
+değer=5
+case değer
+when 0..2
+    puts "0-2 arasında"
+when 3..7
+    puts "3-7 arasında"
+else
+    puts "7den büyük"
+end
+```
+Yukarıdaki ifadenin if-else ile yazılımı
+```
+değer=5
+if (0..2)===değer
+    puts "0-2 arasında"
+elsif (3..7)===değer
+    puts "3-7 arasında"
+else
+    puts "7den büyük"
+end
+```
+
+
+
+
+
+
+
