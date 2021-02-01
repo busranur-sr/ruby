@@ -166,7 +166,7 @@ if condition
 elsif condition
     print "elsif olarak yazılyor. else if değil."
 else 
-    print "kaçta if else olsun fark etmez. En sona bir tane end geliyor."
+    print "kaç tane if else olduğu fark etmez. En sona bir tane end geliyor."
 end
 ```
 Output: > Koşul false ya da nil ise false, diğer tüm durumlar true
