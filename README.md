@@ -149,4 +149,37 @@ Output > öğrenci ismi : xxx
  x,y=y,x
  ```
  x ve ynin değerlerini takas ettirdik.
+ 
+ ### if - else kullanımı 
+ 
+```
+condition=5
+if condition
+    print "Koşul false ya da nil ise false, diğer tüm durumlar true"
+elsif condition
+    print "elsif olarak yazılyor. else if değil."
+else 
+    print "kaçta if else olsun fark etmez. En sona bir tane end geliyor."
+end
+```
+Output: > Koşul false ya da nil ise false, diğer tüm durumlar true
+Aynı zamanda tek satırda da kullanabiliriz.
+ > kod if koşul 
+```
+condition=5
+print "xxx" if condition
+```
+output: > xxx
 
+- Unless kullanımı yukarıdakinin aynısı ancak rubyde unless ile birlikte elsif kullanılamıyor.Yani aşağıdaki hatalı
+```
+nless true
+  puts "one"
+elsif true
+  puts "two"
+else
+  puts "three"
+end
+
+```
+Output: > Compiler error.
