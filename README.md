@@ -310,11 +310,11 @@ Output:
 > 3 \
 > 4 \
 > 5 
-\
-- break : döngüyü sonlandırıyor. \
-- next  : bir sonraki döngüye geçiyor. \
-- redo  : döngünün bulunduğu konumu tekrar ediyor. Koşulu kontrol etmeden \
-- retry : döngüyü baştan başlatır. \
+
+- break : döngüyü sonlandırıyor. 
+- next  : bir sonraki döngüye geçiyor. 
+- redo  : döngünün bulunduğu konumu tekrar ediyor. Koşulu kontrol etmeden 
+- retry : döngüyü baştan başlatır. 
 Örnek:
 ```
 for i in 0..10
@@ -326,7 +326,6 @@ for i in 0..10
 end
 ```
 Output:
-> i: 0 \
 > i: 1 \
 > i: 2 \
 > i: 4 \
