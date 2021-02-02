@@ -315,6 +315,23 @@ Output:
 - next  : bir sonraki döngüye geçiyor. \
 - redo  : döngünün bulunduğu konumu tekrar ediyor. Koşulu kontrol etmeden \
 - retry : döngüyü baştan başlatır. \
+Örnek:
+```
+for i in 0..10
+    if(i%3==0)
+        next; 
+    end
+    break if (8..9)===i 
+    puts "i: #{i}" 
+end
+```
+Output:
+> i: 0 \
+> i: 1 \
+> i: 2 \
+> i: 4 \
+> i: 5 \
+> i: 7
 
 Örnek:
 ```
