@@ -294,9 +294,60 @@ Output: > 1
 - *until ifadesi while ile aynı mantığa sahiptir. Tek fark *koşulu sağlamadığında* çalışır.
 
 - **for kullanımı**
+```
+for $i in 0..5
+    puts "#$i"
+end
+(0..5).each do |j|
+    puts "#{j}"  "->local verilere "#"den sonra süslü parantez içinde erişiyoruz. "
+end
+```
+- İkiside aynı şeyi yapıyor
+Output: > 0 <br>
+          1 <br>
+          2 <br>
+          3 <br>
+          4 <br>
+          5 
+<br>
+- break : döngüyü sonlandırıyor
+- next  : bir sonraki döngüye geçiyor.
+- redo  : döngünün bulunduğu konumu tekrar ediyor. Koşulu kontrol etmeden
+- retry : döngüyü baştan başlatır.
 
-
-
+Örnek:
+```
+(0..5).each do |i|
+  puts "Value: #{i}"
+  redo if i > 2
+end
+```
+Output: > Value: 0 <br>
+          Value: 1 <br>
+          Value: 2 <br>
+          Value: 3 <br>
+          Value: 3 <br>
+          Value: 3 <br>
+          .... sonsuz döngüye girdi.
+          
+<br>
+Örnek: 
+```
+(0..5).each do |i|
+  puts "Value: #{i}"
+  retry if i > 2
+end
+```
+Output: > Value: 0 <br>
+          Value: 1 <br>
+          Value: 2 <br>
+          Value: 3 <br>
+          Value: 0 <br>
+          Value: 1 <br>
+          Value: 2 <br>
+          .... sonsuz döngüye girdi.
+<br>
+Kaynak: (https://rubyquicktips.com/post/1122838559/redo-vs-retry#:~:text=redo%20and%20retry%20are%20both,whole%20loop%20from%20the%20start.)
 
 
 
