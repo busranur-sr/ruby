@@ -332,20 +332,22 @@ Output: > Value: 0 <br>
           
 <br>
 Örnek: 
+
 ```
 (0..5).each do |i|
   puts "Value: #{i}"
   retry if i > 2
 end
 ```
-Output
-> Value: 0 <br>
-> Value: 1 <br>
-> Value: 2 <br>
-> Value: 3 <br>
-> Value: 0 <br>
-> Value: 1 <br>
-> Value: 2 <br>
+
+Output:
+> Value: 0 
+> Value: 1 
+> Value: 2 
+> Value: 3 
+> Value: 0 
+> Value: 1 
+> Value: 2 
 >  .... sonsuz döngüye girdi.
 <br>
 Kaynak: (https://rubyquicktips.com/post/1122838559/redo-vs-retry#:~:text=redo%20and%20retry%20are%20both,whole%20loop%20from%20the%20start.)
