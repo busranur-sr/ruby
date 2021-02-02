@@ -303,17 +303,18 @@ end
 end
 ```
 - İkiside aynı şeyi yapıyor
-Output: > 0 <br>
-          1 <br>
-          2 <br>
-          3 <br>
-          4 <br>
-          5 
-<br>
-- break : döngüyü sonlandırıyor
-- next  : bir sonraki döngüye geçiyor.
-- redo  : döngünün bulunduğu konumu tekrar ediyor. Koşulu kontrol etmeden
-- retry : döngüyü baştan başlatır.
+Output:
+> 0 \
+> 1 \
+> 2 \
+> 3 \
+> 4 \
+> 5 
+\
+- break : döngüyü sonlandırıyor. \
+- next  : bir sonraki döngüye geçiyor. \
+- redo  : döngünün bulunduğu konumu tekrar ediyor. Koşulu kontrol etmeden \
+- retry : döngüyü baştan başlatır. \
 
 Örnek:
 ```
@@ -322,13 +323,14 @@ Output: > 0 <br>
   redo if i > 2
 end
 ```
-Output: > Value: 0 <br>
-          Value: 1 <br>
-          Value: 2 <br>
-          Value: 3 <br>
-          Value: 3 <br>
-          Value: 3 <br>
-          .... sonsuz döngüye girdi.
+Output: 
+> Value: 0 \
+> Value: 1 \
+> Value: 2 \
+> Value: 3 \
+> Value: 3 \
+> Value: 3 \
+> .... sonsuz döngüye girdi.
           
 <br>
 Örnek: 
