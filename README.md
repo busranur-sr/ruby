@@ -338,14 +338,15 @@ Output: > Value: 0 <br>
   retry if i > 2
 end
 ```
-Output: > Value: 0 <br>
-          Value: 1 <br>
-          Value: 2 <br>
-          Value: 3 <br>
-          Value: 0 <br>
-          Value: 1 <br>
-          Value: 2 <br>
-          .... sonsuz döngüye girdi.
+Output
+> Value: 0 <br>
+> Value: 1 <br>
+> Value: 2 <br>
+> Value: 3 <br>
+> Value: 0 <br>
+> Value: 1 <br>
+> Value: 2 <br>
+>  .... sonsuz döngüye girdi.
 <br>
 Kaynak: (https://rubyquicktips.com/post/1122838559/redo-vs-retry#:~:text=redo%20and%20retry%20are%20both,whole%20loop%20from%20the%20start.)
 
