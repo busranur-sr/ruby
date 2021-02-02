@@ -341,13 +341,13 @@ end
 ```
 
 Output:
-> Value: 0 
-> Value: 1 
-> Value: 2 
-> Value: 3 
-> Value: 0 
-> Value: 1 
-> Value: 2 
+> Value: 0 \
+> Value: 1 \
+> Value: 2 \
+> Value: 3 \
+> Value: 0 \
+> Value: 1 \
+> Value: 2 \
 >  .... sonsuz döngüye girdi.
 <br>
 Kaynak: (https://rubyquicktips.com/post/1122838559/redo-vs-retry#:~:text=redo%20and%20retry%20are%20both,whole%20loop%20from%20the%20start.)
