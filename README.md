@@ -385,7 +385,7 @@ puts a "0 yazdırır"
 ```
 - Aynı zamanda return edilecek değeri bizde belirleyebiliyoruz. Eğer sadece return dersek nil döndürür. return x, x döndürür zaten.
 - Birden fazla değeri return ettiğimizde ( return 1 , 2 ) bu değerleri içeren dizi return edilir.
-- Değişken parametre sayısı belirleyebilir. 
+- Değişken parametre sayısı belirlenebilir. 
 ```
 def değişken_parametreli_method(*prm)
     puts "Parametre sayısı #{prm.length}"
@@ -422,4 +422,67 @@ Class1.ekrana_yazdır
 Output:
 > xxx
 
+## Ruby Bloklar
 
+Örnek: 
+(https://www.buraksenyurt.com/post/ruby-kod-parcaciklari-10-yield-ve-block-kullanimi)-
+- Bir Block ile değişkene veya nesneye atayamadığımız kod parçalarını işaret edebilir ve bu isimsiz kod parçalarını metodlara parametre olarak taşıyabiliriz. Aslında methodları kod parçacıkları ile çağırmak için kullanıır diyebiliriz.
+- Block ismi ile methodun isminin aynı olması gerekiyor.
+- "yield" anahtar kelimesi kullanılır. blockları bu ifade ile çağırıyoruz.
+```
+def deneme
+    puts "Methodun içindesin"
+    yield 
+    puts "Tekrardan methodunun içindesin"
+    yield
+end
+
+deneme { 
+    puts "block içindesin"
+}
+```
+Output:
+> Methodun içindesin \
+> block içindesin \
+> Tekrardan methodunun içindesin \
+> block içindesin 
+
+- Blocklar parametre alabilir. Bunun  için parametreleri "| |" içinde tanımlamız gerekmektedir. Ayrıca parametre değerleri yield yanı yazılır.
+```
+def deneme
+    puts "Methodun içindesin"
+    yield 5,10
+    puts "Tekrardan methodunun içindesin"
+end
+
+deneme { 
+    |x,y|
+    puts "block içindesin "
+    puts "x: #{x} y: #{y}"
+}
+```
+Output: 
+> Methodun içindesin \
+> block içindesin \
+> x: 5 y: 10 \
+> Tekrardan methodunun içindesin
+
+- **"BEGIN" ve "END" blockları** 
+  - Dosya çalıştırıldığında ilk çalışan kısım begin bloclakları ve en son çalışan kısım end blocklarıdır. Aşağıdaki örnekten daha iyi anlaşılabilir.
+  ```
+  BEGIN { 
+   # BEGIN block code 
+   puts "BEGIN code block"
+  } 
+
+  END { 
+   # END block code 
+   puts "END code block"
+   }
+   # MAIN block code 
+   puts "MAIN code block"
+  ```
+Output: 
+> BEGIN code block \
+> MAIN code block \
+> END code block
