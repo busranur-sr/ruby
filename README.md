@@ -314,7 +314,7 @@ Output:
 - break : döngüyü sonlandırıyor. 
 - next  : bir sonraki döngüye geçiyor. 
 - redo  : döngünün bulunduğu konumu tekrar ediyor. Koşulu kontrol etmeden 
-- retry : döngüyü baştan başlatır. 
+- retry : baştan başlatır. //ruby 1.9 dan beri döngülerde kullanılamıyor. // ileride kullanımını göreceğiz.
 Örnek:
 ```
 for i in 0..10
@@ -349,26 +349,77 @@ Output:
 > .... sonsuz döngüye girdi.
           
 <br>
-Örnek: 
-
-```
-(0..5).each do |i|
-  puts "Value: #{i}"
-  retry if i > 2
-end
-```
-
-Output:
-> Value: 0 \
-> Value: 1 \
-> Value: 2 \
-> Value: 3 \
-> Value: 0 \
-> Value: 1 \
-> Value: 2 \
->  .... sonsuz döngüye girdi.
-<br>
 Kaynak: (https://rubyquicktips.com/post/1122838559/redo-vs-retry#:~:text=redo%20and%20retry%20are%20both,whole%20loop%20from%20the%20start.)
 
+## Ruby Methodlar
+
+- Diğer dillerdeki fonksiyonlardan çok da bir farkları yok.
+- Küçük harf ile başlamalılar. Diğer türlü ruby methodları sabit(constant) sanabilir.
+- def method_adi(x,y) -> tabi eğer parametreli yapmak istiyorsak \
+  --- \
+  end
+- Ayrıca ruby dilinde default parametre belirleyebiliyoruz. Bu sayede parametreli methodlar parametresiz çağırıldığında değişkenlerin alabileceği değerler oluyor.
+```
+def method1(x=0,y=0)
+    puts "x: #{x} y: #{y}"
+end
+
+method1 
+method1 5 , 10
+```
+Output:
+> x: 0 y: 0 \
+> x: 5 y: 10
+
+- **return etme** rubyde methodun son satırıdaki değer return edilir.
+```
+def method1(x=0,y=0)
+    puts "x: #{x} y: #{y}"
+    k=0
+end
+
+a=method1 
+method1 5 , 10
+
+puts a "0 yazdırır"
+```
+- Aynı zamanda return edilecek değeri bizde belirleyebiliyoruz. Eğer sadece return dersek nil döndürür. return x, x döndürür zaten.
+- Birden fazla değeri return ettiğimizde ( return 1 , 2 ) bu değerleri içeren dizi return edilir.
+- Değişken parametre sayısı belirleyebilir. 
+```
+def değişken_parametreli_method(*prm)
+    puts "Parametre sayısı #{prm.length}"
+    for i in 0...prm.length
+       puts "veriler: #{prm[i]}"
+    end
+    
+end
+
+değişken_parametreli_method "x","y","z"
+değişken_parametreli_method "1"
+```
+Output: 
+> Parametre sayısı 3 \
+> veriler: x \
+> veriler: y \
+> veriler: z \
+> Parametre sayısı 1 \
+> veriler: 1
+
+*kaç tane parametre girilirse ona uygun dizi tanımlanıp değerler içine atılıyor.*
+
+- Bir method class dışında tanımlanırsa varsayılan olarak private, class içinde tanımlanırsa varsayılan olarak public tanımlanır. Class içindeki methodlara ulaşmak için ilk önce classdan bir obje yaratıp sonra bu obje ile methoda ulaştığımızı biliyoruz. Ruby dilinde classı başlatmadan yani obje yaratmadan class içindeki methoda ulaşmak mümkün. Methodun adını "class_adı.method_adi"  yapmamız gerekiyor sadece.
+
+```
+class Class1
+    def Class1.ekrana_yazdır
+        puts "xxx"
+    end 
+end 
+
+Class1.ekrana_yazdır
+```
+Output:
+> xxx
 
 
