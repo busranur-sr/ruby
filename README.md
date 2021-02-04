@@ -486,3 +486,7 @@ Output:
 > BEGIN code block \
 > MAIN code block \
 > END code block
+
+## Ruby Modüller 
+- kaynak (http://www.belgeler.org/uygulamalar/ruby/ruby-ug-modules.html)
+- 
