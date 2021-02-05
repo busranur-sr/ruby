@@ -489,4 +489,41 @@ Output:
 
 ## Ruby Modüller 
 - kaynak (http://www.belgeler.org/uygulamalar/ruby/ruby-ug-modules.html)
-- 
+
+- Classlara benzerler ancak örnek ve alt sınıfı oluşturulamaz. 
+- module .. end şeklinde tanımlanırlar.
+- modül adları büyük harf ile başlamalıdır.
+- Modül içindeki methodlar class methodu gibi tanımlanır. ( yani modül_adi.method_adi )
+- İki çeşit kullanımı yaygındır.
+  - Birinci kullanım nedeni ilişkili method ve sabitleri bir arada toplamaktır. Örnek -> Math modülü
+  - Modül içindeki sabitlere ulaşabilmek "::" kullanmız gerekmektedir. Örnek
+  ```
+   x= Math::PI
+   puts x
+  ```
+  Output: 
+  > 3.141592653589793
+  
+  ```
+  module Benim_modülüm
+     Sabit=5.7
+     def Benim_modülüm.toplama(x)
+        sonuc=x+Sabit
+     end
+
+    def Benim_modülüm.çarpma(x)
+        sonuc=x*Sabit
+    end
+  end
+
+  puts Benim_modülüm::Sabit
+  puts Benim_modülüm.toplama(7)
+  ```
+  Output:
+  > 5.7 \
+  > 12.7
+  
+  
+  
+  
+  
