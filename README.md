@@ -666,4 +666,4 @@ Output:
   puts "#{dizi.at(-1)}"
   ```
   Output: 
-  > x
+  > 5
