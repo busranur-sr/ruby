@@ -496,33 +496,34 @@ Output:
 - Modül içindeki methodlar class methodu gibi tanımlanır. ( yani modül_adi.method_adi )
 - İki çeşit kullanımı yaygındır.
   - Birinci kullanım nedeni ilişkili method ve sabitleri bir arada toplamaktır. Örnek -> Math modülü
-  - Modül içindeki sabitlere ulaşabilmek "::" kullanmız gerekmektedir. Örnek
-  ```
-   x= Math::PI
-   puts x
-  ```
-  Output: 
-  > 3.141592653589793
+    - Modül içindeki sabitlere ulaşabilmek "::" kullanmız gerekmektedir. Örnek
+     ```
+     x= Math::PI
+     puts x
+     ```
+     Output: 
+     > 3.141592653589793
   
-  ```
-  module Benim_modülüm
-     Sabit=5.7
-     def Benim_modülüm.toplama(x)
+      ```
+      module Benim_modülüm
+        Sabit=5.7
+        def Benim_modülüm.toplama(x)
         sonuc=x+Sabit
-     end
+        end
 
-    def Benim_modülüm.çarpma(x)
+        def Benim_modülüm.çarpma(x)
         sonuc=x*Sabit
-    end
-  end
+        end
+      end
 
-  puts Benim_modülüm::Sabit
-  puts Benim_modülüm.toplama(7)
-  ```
-  Output:
-  > 5.7 \
-  > 12.7
-  
+      puts Benim_modülüm::Sabit
+      puts Benim_modülüm.toplama(7)
+      ```
+      Output:
+      > 5.7 \
+      > 12.7
+    
+    - modülün içindeki methodlara direk ulaşmak istiyorsak "include" etmemiz gerekmektedir.
   
   
   
