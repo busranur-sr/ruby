@@ -73,7 +73,7 @@ ogrenci2 = Ogrenci.new("181180064","Mehmet")
 ```
 Bu durumda initialize methodunun parametre olarak aldığı no ve ad değişkenleri local değişkenler oluyor ve initialize methodu dışında kullanılamıyorlar. Bu methodun içinde local değişkeler ; @ad,@no Instance değişkenlerine atanıyor. Ayrıca @@@ogrenci_sayisi değişkeni Class değişkeni olup Ogrenci classından yaratılan tüm objelerde kullanılabilir.
 
-> Rubyde değişkenlere ulaşmak için '#' kullanıyoruz.
+> Ruby değerlerini string içinde kullanabilmek için #{ } kullanıyoruz. 
 Örnek 
 ```
 class Ogrenci
@@ -582,8 +582,49 @@ Output:
      - Diğer dillerde include ne yapıyorsa ruby de  require ona yapar.
      - Modülün bulunduğu dosyanın adıyla require ederiz. Modül adıyla değil.
      - Amacımız kalıtım sağlamak değilse direk modüle ihtiyacımız varsa kullanıyoruz.
-     
     
+    
+  ## Ruby Stringler
+ 
+ - Ruby değerlerini string içinde kullanabilmek için #{ } kullanıyoruz. 
+ ```
+ x,y=5,8
+ benim_Stringim = "İstediğim değer : #{x*y} "
+ puts benim_Stringim
+ ```
+ Output:
+ > İstediğim değer : 40 
+ - String methodları kullanabilmek için elimide String objesi olmalıdır. 
+ - String methodları (https://www.tutorialspoint.com/ruby/ruby_strings.htm) \
+                     (https://towardsdatascience.com/17-useful-ruby-string-methods-to-clean-and-format-your-data-9c9147ff87b9)
+                     
+             
+ - Bazi String methodlarını inceleyeceğiz ancak yukarıdaki adrese göz gezdirilmesi önerilir.
+ ```
+ benim_Stringim = String.new("Tahirle Zühre Meselesi") #normal de tanımlanabilir.
+ puts benim_Stringim
+ puts benim_Stringim.downcase # Tüm karakteri küçük yapar.
+ puts benim_Stringim.chars # Stringi charlara ayırır
+ puts benim_Stringim.length #String uzunluğunu döndürür
+ puts benim_Stringim.include?("i") # true ya da false döndürür.
+ puts benim_Stringim.count("i") # verilen değeri kaç tane içerdiğini döndürür.
+ puts benim_Stringim.reverse # String'i ters döndürür.
+ puts benim_Stringim.split # verilen değeri baz alarak Stringi ayırır. 
+  ```
+ Output:
+ > Tahirle Zühre Meselesi \
+ > tahirle zühre meselesi \
+ > T \
+ > a \
+ > ..... gider böyle \
+ > 22 \
+ > true \
+ > 2 \
+ > iseleseM erhüZ elrihaT \
+ > Tahirle \
+ > Zühre \
+ > Meselesi \
+  
     
   
   
