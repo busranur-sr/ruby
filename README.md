@@ -524,6 +524,7 @@ Output:
       > 12.7
     
     - modülün içindeki methodlara direk ulaşmak istiyorsak "include" etmemiz gerekmektedir.
+    
   
   
   
