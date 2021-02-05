@@ -625,8 +625,45 @@ Output:
  > Zühre \
  > Meselesi \
   
-    
   
+  ## Ruby Diziler
+  - -1 indexi dizinin son elemanını gösterir, -2 ise sondan bir öncekinin , bu şekilde devam eder.
+  - Dizi tanımı birden fazla şekilde yapılabilir.
+  ```
+  dizi = ["x","y",5]
+  puts "#{dizi}"
+
+  dizi2 = Array.new(20)
+  puts dizi2.length # dizi2.size da aynı şeyi yapar
+
+  dizi3 = Array.new(4,"bmt") # diziye 4 tane bmt değerini atar
+  puts "#{dizi3}"
+
+  dizi4 = Array.new(10){ |i| i = i*5 }
+  puts "#{dizi4}"
+
+  dizi5 = Array.[]("Aslında","hepsi","aynı")
+  puts "#{dizi5}"
+
+  dizi6 = Array["işi","yapıyor."]
+  puts "#{dizi6}"
+
+  dizi7 = Array(0..9)
+  puts "#{dizi7}"
+  ```
+  Output:
+  > ["x", "y", 5] \
+  > 20 \
+  > ["bmt", "bmt", "bmt", "bmt"] \
+  > [0, 5, 10, 15, 20, 25, 30, 35, 40, 45] \
+  > ["Aslında", "hepsi", "aynı"] \
+  > ["işi", "yapıyor."] \
+  > [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
   
-  
-  
+  - dizidedki elemanlara ulaşmak için ise
+  ```
+  dizi = ["x","y",5]
+  puts "#{dizi.at(-1)}"
+  ```
+  Output: 
+  > x
