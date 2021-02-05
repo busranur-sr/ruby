@@ -493,9 +493,9 @@ Output:
 - Classlara benzerler ancak örnek ve alt sınıfı oluşturulamaz. 
 - module .. end şeklinde tanımlanırlar.
 - modül adları büyük harf ile başlamalıdır.
-- Modül içindeki methodlar class methodu gibi tanımlanır. ( yani modül_adi.method_adi )
 - İki çeşit kullanımı yaygındır.
   - Birinci kullanım nedeni ilişkili method ve sabitleri bir arada toplamaktır. Örnek -> Math modülü
+    - Modül içindeki methodlar class methodu gibi tanımlanır. ( yani modül_adi.method_adi )
     - Modül içindeki sabitlere ulaşabilmek "::" kullanmız gerekmektedir. Örnek
      ```
      x= Math::PI
@@ -523,7 +523,67 @@ Output:
       > 5.7 \
       > 12.7
     
-    - modülün içindeki methodlara direk ulaşmak istiyorsak "include" etmemiz gerekmektedir.
+    - modülün içindeki methodlara direk ulaşmak istiyorsak "include" etmemiz gerekmektedir. Bu sayede class methodu kullanmamıza gerek kalmaz.
+    ```
+    module Benim_modülüm
+    Sabit=5.7
+    def toplama(x)
+    sonuc=x+Sabit
+    end
+
+    def çarpma(x)
+    sonuc=x*Sabit
+    end
+    end
+
+    include Benim_modülüm
+    puts Sabit
+    puts toplama(7)
+    ```
+  
+   - İkinci kullanım şekli ise karışım (mixin) dir. Ruby çoğlu mirası ( multiple inheritance ) desteklemiyor. Ancak bunu modüller bunu yapabilmemize olarak sağlıyor. 
+   Örnekten daha kolay anlaşılabiir.
+   ```
+   module A
+    def method
+        puts "xxx"
+    end
+   end 
+
+   module B
+    def method2
+        puts "yyy"
+    end
+   end
+
+   class C
+    include A
+    include B
+   end
+
+   my=C.new
+   my.method
+   my.method2
+   
+   ```
+   Output:
+   > xxx \
+   > yyy
+   
+   ### Ruby "include" ifadesi
+    (daha detaylı incelenmesi gerek.)
+    - https://stackoverflow.com/questions/318144/what-is-the-difference-between-include-and-require-in-ruby  
+    - Modülün adı kullanarak include ederiz . Dosyanın adıyla değil.
+    - Genelde koddaki tekrarlamadan kurtulmak için kullanılır.
+    
+   ### Ruby "require" ifadesi 
+     (daha detaylı incelenmesi gerek.)
+     - https://stackoverflow.com/questions/318144/what-is-the-difference-between-include-and-require-in-ruby  
+     - Diğer dillerde include ne yapıyorsa ruby de  require ona yapar.
+     - Modülün bulunduğu dosyanın adıyla require ederiz. Modül adıyla değil.
+     - Amacımız kalıtım sağlamak değilse direk modüle ihtiyacımız varsa kullanıyoruz.
+     
+    
     
   
   
