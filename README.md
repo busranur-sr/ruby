@@ -627,6 +627,7 @@ Output:
   
   
   ## Ruby Diziler
+  - Ruby dizileri, diğer dillerdeki diziler kadar katı değildir.Ruby dizileri String, Integer, Fixnum, Hash, Symbol gibi nesneleri ve hatta diğer Array nesnelerini tutabilir.
   - -1 indexi dizinin son elemanını gösterir, -2 ise sondan bir öncekinin , bu şekilde devam eder.
   - Dizi tanımı birden fazla şekilde yapılabilir.
   ```
@@ -667,3 +668,67 @@ Output:
   ```
   Output: 
   > 5
+  
+  ## Ruby Aralıklar
+  
+ - Önceki konularda zaten örneklerini gördük.
+ - (1..2), (87...95) , ('a'..'z')
+ - ".." kullanıldığında son elemanı dahil ediyor.
+ - "..." kullanıldığında son elemanı dahil etmiyor.
+ - Kullanabileceğimiz bazı methodları var.
+ ``` 
+ rakamlar = 0...10
+
+ puts rakamlar.include?(5) #içerip içermediğine göre true false döndürüyor.
+
+ puts rakamlar.min # aralıkta en küçük değere sahip değişkenin döndürüyor.
+ puts rakamlar.max # aralıkta en büyük değere sahip değişkenin döndürüyor.
+
+ rakamlar = rakamlar.reject{ |i| i>=5} # verilen koşulu sağlayan değerler aralıktan çıkarılıyor.
+ puts "#{rakamlar}" 
+
+ rakamlar.each do |rakam| #foreach gibi aralıktaki tüm değerler için döngüye giriyor.
+ puts "aralıktaki değer: #{rakam}"
+ end
+ ```
+ Output:
+ > true \
+ > 0 \
+ > 9 \
+ > [0, 1, 2, 3, 4] \
+ > aralıktaki değer: 0 \
+ > aralıktaki değer: 1 \
+ > aralıktaki değer: 2 \
+ > aralıktaki değer: 3 \
+ > aralıktaki değer: 4 \
+ 
+ - 3 Çeşit kullanımı var.
+   1- Dizi olarak aralıklar.
+      - Aralıkları bir diziye atama yapabiliriz. Bunu için "to_a" ifadesi kullanmamız lazım.
+      ```
+      range=(1..10).to_a
+      puts "#{range}"
+      ```
+      Output: 
+      > [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+   
+  
+  2- Koşul olarak aralıklar.
+     - when case konusunda örneği var.
+  3- Ranges as Intervals \?
+     - kapsama operatörü ile kullanılır. "==="
+     ```
+     istediğim_harfler = 'c'..'k'
+
+     if  istediğim_harfler === 'd'
+        puts "d içeriyor"
+     elsif (istediğim_harfler === 'z')
+        puts "z içeriyor."
+     end
+     ```
+     Output:
+     > d içeriyor
+    
+  
+  
+  
