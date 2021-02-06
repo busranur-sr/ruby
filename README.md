@@ -687,7 +687,7 @@ Output:
  rakamlar = rakamlar.reject{ |i| i>=5} # verilen koşulu sağlayan değerler aralıktan çıkarılıyor.
  puts "#{rakamlar}" 
 
- rakamlar.each do |rakam| #foreach gibi aralıktaki tüm değerler için döngüye giriyor.
+ rakamlar.each do |rakam| #foreach gibi aralıktaki tüm değerler için döngüye giriyor. iteratörler kısmında detaylı anlatımı mevcut.
  puts "aralıktaki değer: #{rakam}"
  end
  ```
@@ -716,7 +716,8 @@ Output:
   2- Koşul olarak aralıklar. \
      - when case konusunda örneği var. \
   3- Ranges as Intervals \
-     - kapsama operatörü ile kullanılır. "==="
+     - kapsama operatörü ile kullanılır. "===" \
+     
      ```
      istediğim_harfler = 'c'..'k'
 
@@ -730,5 +731,31 @@ Output:
      > d içeriyor
     
   
+  ## Ruby Iteratörler
   
+  - İteratörler collection tarafından desteklenen methodlardır. 
+  - İki çeşit iteratör inceleyeceğiz.
+    - each, collect
+  #### each iteratörü
+  Hangi çeşit collection verilirse verilsin içindeki elemanları birer birer ele alarak döngü sağlıyor.
+  ```
+  dizi = [1,8,9,7,0]
+
+  dizi.each do |i|
+    print i
+  end
+  ```
+  Output:
+  > 18970
   
+ #### collect iteratörü
+ - Tüm koleksiyonun isteden şekilde döndürür.
+ ```
+ a = [1,2,3,4,5]
+ b = a.collect{ |eleman| 5*eleman} #dizideki her elemanın 5 ile çarpılmış halini içeren diziyi b'ye atar
+ puts "#{b}"
+ ```
+ Output:
+ > [5, 10, 15, 20, 25]
+ 
+ 
