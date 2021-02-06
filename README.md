@@ -702,20 +702,20 @@ Output:
  > aralıktaki değer: 3 \
  > aralıktaki değer: 4 \
  
- - 3 Çeşit kullanımı var.
-   1- Dizi olarak aralıklar.
-      - Aralıkları bir diziye atama yapabiliriz. Bunu için "to_a" ifadesi kullanmamız lazım.
+ - 3 Çeşit kullanımı var. \
+   1- Dizi olarak aralıklar. \
+      - Aralıkları bir diziye atama yapabiliriz. Bunu için "to_a" ifadesi kullanmamız lazım. \
       ```
       range=(1..10).to_a
       puts "#{range}"
       ```
       Output: 
-      > [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      > [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
    
   
-  2- Koşul olarak aralıklar.
-     - when case konusunda örneği var.
-  3- Ranges as Intervals \?
+  2- Koşul olarak aralıklar. \
+     - when case konusunda örneği var. \
+  3- Ranges as Intervals \
      - kapsama operatörü ile kullanılır. "==="
      ```
      istediğim_harfler = 'c'..'k'
