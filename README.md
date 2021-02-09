@@ -758,4 +758,21 @@ Output:
  Output:
  > [5, 10, 15, 20, 25]
  
- 
+ # Ruby Çalışmaları
+### Bubble Sort Algoritması
+- https://tsafaelmali.medium.com/bubble-sort-algoritmas%C4%B1-nedir-9811bd921b8d
+```
+dizi=[5,0,8,1,65,14,2,6]
+
+for j in 0...dizi.size
+    for i in 0..(dizi.size-2)
+        if dizi.at(i) > dizi.at(i+1)
+            dizi[i],dizi[i+1]=dizi[i+1],dizi[i]
+        end
+    end
+end
+
+puts "#{dizi}"
+```
+ Output:
+ > [0, 1, 2, 5, 6, 8, 14, 65]
